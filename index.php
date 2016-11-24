@@ -16,6 +16,36 @@ and open the template in the editor.
     <body>
         <?php
         include_once 'Views/navbar.php';
+        ?>
+
+        <section class="strandardCenter">
+            
+            <article class="post">
+                <header>
+                    <h1>Place Holder Title</h1>
+                </header>
+                <hr>
+                <section>
+                    <div class="postPicture">
+                        <figure>
+                            <img src="" alt="Random picture">
+                        </figure>
+                    </div>
+                    <p class="postDesc">
+                        Une description ?
+                    </p>
+                </section>
+                <footer class="postFooter">
+                    <button class="btn btn-default">Like</button>
+                    <button class="btn btn-default">Dislike</button>
+                    <p>Nb Like</p>
+                    <p>Nb Dislike</p>
+                </footer>
+            </article>
+            
+        </section>
+
+        <?php
         include_once 'Views/footer.php';
         ?>
     </body>
