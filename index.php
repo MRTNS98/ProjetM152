@@ -8,20 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="Bootstrap//js/bootstrap.min.js"></script>
         <title></title>
     </head>
     <body>
-        
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">Gestionnaire d'evenements</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li>Liste utilisateurs</a></li>
-                </ul>
-            </div>
-        </nav>
+       
         <?php
         // put your code here
         ?>
