@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `projetm152`
 --
-
+CREATE DATABASE IF NOT EXISTS `projetm152`;
 -- --------------------------------------------------------
 
 --
@@ -52,6 +52,8 @@ CREATE TABLE IF NOT EXISTS `contenu` (
   `Titre` varchar(144) NOT NULL,
   `lienContenu` varchar(255) NOT NULL,
   `Auteur` varchar(40) DEFAULT NULL,
+  `nbLike` int(15) ,
+  `nbDislike` int(15) ,
   `idCategorie` int(11) NOT NULL,
   `idSection` int(11) NOT NULL,
   PRIMARY KEY (`idContenu`),

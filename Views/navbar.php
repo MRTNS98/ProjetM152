@@ -12,11 +12,33 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Images <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Vidéos</a></li>
-        <li><a href="#">Blagues</a></li>
+          <!-- class="active" -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sections <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Images<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Sec. 1 (Drole)</a></li>
+            <li><a href="#">Sec. 2 (Sport)</a></li>
+            <li><a href="#">Je sais pas</a></li>
+            <li class="divider"></li>
+            <li><a href="#">A completer</a></li>
+            <li class="divider"></li>
+            <li><a href="#">A voir</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vidéos<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Sec. 1 (Drole)</a></li>
+            <li><a href="#">Sec. 2 (Sport)</a></li>
+            <li><a href="#">Je sais pas</a></li>
+            <li class="divider"></li>
+            <li><a href="#">A completer</a></li>
+            <li class="divider"></li>
+            <li><a href="#">A voir</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blagues<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Sec. 1 (Drole)</a></li>
             <li><a href="#">Sec. 2 (Sport)</a></li>
