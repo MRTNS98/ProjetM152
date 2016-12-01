@@ -19,30 +19,37 @@ and open the template in the editor.
         ?>
 
         <section class="strandardCenter">
-            
+
+            <!-- Inseré postImage.php -->
+
+            <!-- Inseré postVidéo -->
             <article class="post">
                 <header>
-                    <h1>Place Holder Title</h1>
+                    <h3>Try to Remember</h3>
                 </header>
-                <hr>
                 <section>
                     <div class="postPicture">
                         <figure>
-                            <img src="" alt="Random picture">
+                            
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/8IoUUAcN-Ng" frameborder="0" allowfullscreen></iframe>
                         </figure>
+                        
+                        
                     </div>
                     <p class="postDesc">
                         Une description ?
                     </p>
                 </section>
                 <footer class="postFooter">
-                    <button class="btn btn-default">Like</button>
-                    <button class="btn btn-default">Dislike</button>
-                    <p>Nb Like</p>
-                    <p>Nb Dislike</p>
+                    <button class="btn btn-success">Like</button>
+                    <button class="btn btn-danger">Dislike</button>
+                    <p class="text-danger">Nb Dislike</p>
+                    <p class="text-success">Nb Like</p>
                 </footer>
             </article>
-            
+
+            <!-- Inseré postBlague -->
+
         </section>
 
         <?php
