@@ -39,3 +39,40 @@ function getAllData(){
     $request->execute();
     return $request->fetchAll();
 }
+/**
+ * Affiche le nombre de like d'un contenu déterminé
+ */
+function NbLike($Categorie,$Contenu){
+    $db = connectDb();
+    $sql = "SELECT `nbLike`, `` 
+            FROM `contenu` as c
+            JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
+            WHERE ca.nomCategorie = ':NomCategorie'
+            AND c.Titre =':NomContenu'";
+    $request = $db->prepare($sql);
+    $request->execute(array(
+        `NomCategorie` => $Categorie,
+         `NomContenu` => $Contenu
+    ));
+    return $request->fetchAll();
+}
+/**
+ * Affiche le nombre de dislike d'un contenu déterminé
+ */
+function NbDislike($Categorie,$Contenu){
+    $db = connectDb();
+    $sql = "SELECT `nbDislike`, `` 
+            FROM `contenu` as c
+            JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
+            WHERE ca.nomCategorie = ':NomCategorie'
+            AND c.Titre =':NomContenu'";
+    $request = $db->prepare($sql);
+    $request->execute(array(
+        `NomCategorie` => $Categorie,
+         `NomContenu` => $Contenu
+    ));
+    return $request->fetchAll();
+}
+/**
+ * Ajoute des Likes
+ */
