@@ -28,3 +28,14 @@ function getData($Section, $Categorie) {
     ));
     return $request->fetchAll();
 }
+/**
+ * 
+ * @return tous les enregistrements de la table contenu
+ */
+function getAllData(){
+    $db = connectDb();
+    $sql = "SELECT * FROM contenu";
+    $request = $db->prepare($sql);
+    $request->execute();
+    return $request->fetchAll();
+}
