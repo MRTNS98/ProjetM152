@@ -29,21 +29,23 @@ function getData($Section, $Categorie) {
     ));
     return $request->fetchAll();
 }
+
 /**
  * 
  * @return tous les enregistrements de la table contenu
  */
-function getAllData(){
+function getAllData() {
     $db = connectDb();
     $sql = "SELECT * FROM contenu";
     $request = $db->prepare($sql);
     $request->execute();
     return $request->fetchAll();
 }
+
 /**
  * Affiche le nombre de like d'un contenu déterminé
  */
-function NbLike($Categorie,$Contenu){
+function NbLike($Categorie, $Contenu) {
     $db = connectDb();
     $sql = "SELECT `nbLike` 
             FROM `contenu` as c
@@ -53,14 +55,15 @@ function NbLike($Categorie,$Contenu){
     $request = $db->prepare($sql);
     $request->execute(array(
         `NomCategorie` => $Categorie,
-         `NomContenu` => $Contenu
+        `NomContenu` => $Contenu
     ));
     return $request->fetchAll();
 }
+
 /**
  * Affiche le nombre de dislike d'un contenu déterminé
  */
-function NbDislike($Categorie,$Contenu){
+function NbDislike($Categorie, $Contenu) {
     $db = connectDb();
     $sql = "SELECT `nbDislike` 
             FROM `contenu` as c
@@ -70,16 +73,17 @@ function NbDislike($Categorie,$Contenu){
     $request = $db->prepare($sql);
     $request->execute(array(
         `NomCategorie` => $Categorie,
-         `NomContenu` => $Contenu
+        `NomContenu` => $Contenu
     ));
     return $request->fetchAll();
 }
+
 /**
  * Actualise les Likes à la BDD
  */
-function UpdateLike($NbLike,$IdContenu){
+function UpdateLike($NbLike, $IdContenu) {
     $db = connectDb();
-    $sql= "UPDATE `contenu` 
+    $sql = "UPDATE `contenu` 
            SET `nbLike` = :NbLike
            WHERE `idContenu` = :IdContenu";
     $request = $db->prepare($sql);
@@ -89,18 +93,38 @@ function UpdateLike($NbLike,$IdContenu){
     ));
     return $request->fetchAll();
 }
+
 /**
  * Actualise les Dislikes à la BDD
  */
-function UpdateDislike($NbDislike,$IdContenu){
+function UpdateDislike($NbDislike, $IdContenu) {
     $db = connectDb();
-    $sql= "UPDATE `contenu` 
+    $sql = "UPDATE `contenu` 
            SET `nbDislike` = :NbDislike
            WHERE `idContenu` = :IdContenu";
     $request = $db->prepare($sql);
     $request->execute(array(
         'NbDislike' => $NbDislike,
         'IdContenu' => $IdContenu
+    ));
+    return $request->fetchAll();
+}
+
+/**
+ * Pas Sur que fonction soit correctement faite, doute si besoin de jointure pour lien entre categorie et section avec le contenu
+ * Insertion du contenus dans la BDD
+ */
+function InsertData($Titre,$LienContenu,$Auteur,$Categorie,$Section) {
+    $db = connectDb();
+    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `Auteur`,`idCategorie`, `idSection`)
+            VALUES (':Titre',':LienContenu',':Auteur',:Categorie,:Section)";
+    $request = $db->prepare($sql);
+    $request->execute(array(
+        'Titre' => $Titre,
+        'LienContenu' => $LienContenu,
+        'Auteur' => $Auteur,
+        'Categorie' => $Categorie,
+        'Section' => $Section
     ));
     return $request->fetchAll();
 }
