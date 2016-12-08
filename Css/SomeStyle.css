@@ -7,13 +7,17 @@ and open the template in the editor.
     Created on : 24 nov. 2016, 10:25:11
     Author     : MARTINSM_INFO
 */
+html{
+    min-width: 300px;
+}
+
 .footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
     height: 30px;
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color:#c41d1d;
+    color: #ffffff;
 }
 
 .footer-container {
@@ -79,7 +83,6 @@ and open the template in the editor.
 .postFooter p{
     float: right;
     width: 80px;
-    
 }
 
 .like {
@@ -88,4 +91,28 @@ and open the template in the editor.
 
 .dislike {
     color: red;
+}
+
+.postBlague {
+    height: auto;
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e2ddc7;
+    margin-bottom: 5px;
+    background-color: #e8e8e8;
+}
+
+.pBlague {
+    height: 98%;
+    width: auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-right: 5px;
+    text-align: justify;
+    text-justify: inter-word
 }
