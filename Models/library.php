@@ -6,6 +6,7 @@
 // Auteur: Micael Rodrigues
 // Classe : I.IN-P4B
 // Version 1: 24.11.2016
+// Version 1.1: 8.12.2016
 
 require_once ('dbconnection.php');
 
@@ -44,7 +45,7 @@ function getAllData(){
  */
 function NbLike($Categorie,$Contenu){
     $db = connectDb();
-    $sql = "SELECT `nbLike`, `` 
+    $sql = "SELECT `nbLike` 
             FROM `contenu` as c
             JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
             WHERE ca.nomCategorie = ':NomCategorie'
@@ -61,7 +62,7 @@ function NbLike($Categorie,$Contenu){
  */
 function NbDislike($Categorie,$Contenu){
     $db = connectDb();
-    $sql = "SELECT `nbDislike`, `` 
+    $sql = "SELECT `nbDislike` 
             FROM `contenu` as c
             JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
             WHERE ca.nomCategorie = ':NomCategorie'
@@ -74,5 +75,32 @@ function NbDislike($Categorie,$Contenu){
     return $request->fetchAll();
 }
 /**
- * Ajoute des Likes
+ * Actualise les Likes à la BDD
  */
+function UpdateLike($NbLike,$IdContenu){
+    $db = connectDb();
+    $sql= "UPDATE `contenu` 
+           SET `nbLike` = :NbLike
+           WHERE `idContenu` = :IdContenu";
+    $request = $db->prepare($sql);
+    $request->execute(array(
+        'NbLike' => $NbLike,
+        'IdContenu' => $IdContenu
+    ));
+    return $request->fetchAll();
+}
+/**
+ * Actualise les Dislikes à la BDD
+ */
+function UpdateDislike($NbDislike,$IdContenu){
+    $db = connectDb();
+    $sql= "UPDATE `contenu` 
+           SET `nbDislike` = :NbDislike
+           WHERE `idContenu` = :IdContenu";
+    $request = $db->prepare($sql);
+    $request->execute(array(
+        'NbDislike' => $NbDislike,
+        'IdContenu' => $IdContenu
+    ));
+    return $request->fetchAll();
+}
