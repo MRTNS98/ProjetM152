@@ -25,6 +25,60 @@ and open the template in the editor.
             <!-- Inseré postVidéo -->
 
             <!-- Inseré postBlague -->
+            <div class="addForm">
+                <form method="POST" action="?" class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="inputAutor" class="col-lg-2 control-label">Auteur :</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="inputAutor" placeholder="Nom de l'auteur">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectCateg" class="col-lg-2 control-label">Catégorie :</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" id="selectCateg">
+                                    <option>Image (non dynamique)</option>
+                                    <option>Vidéo (non dynamique)</option>
+                                    <option>Blague (non dynamique)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectSection" class="col-lg-2 control-label">Section :</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" id="selectSection">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Image :</label>
+                            <label class="col-lg-2 control-label">Code vidéo :</label>
+                            <label class="col-lg-2 control-label">Blague :</label>
+                            <div class="col-lg-10">
+                                <input type="file">
+                                <input type="text" class="form-control" id="inputCodeVideo" placeholder="lFGHkULtQRQ">
+                                <input type="text" class="form-control" id="inputBlague" placeholder="Toto....">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Description :</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Ajouter" class="btn btn-default">
+                    </fieldset>
+                </form>
+            </div>
 
         </section>
 

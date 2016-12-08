@@ -116,3 +116,15 @@ html{
     text-align: justify;
     text-justify: inter-word
 }
+
+.addForm {
+    max-width: 500px;
+    min-width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+

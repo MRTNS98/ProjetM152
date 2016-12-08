@@ -1,3 +1,5 @@
+<!-- PAGE A RENDRE DYNAMIQUE -->
+
 <article class="post">
     <header>
         <h3>Title</h3>
