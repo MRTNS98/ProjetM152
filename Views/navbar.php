@@ -1,3 +1,8 @@
+<?php
+/**
+ * 
+ */
+?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -18,7 +23,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <?php
                         foreach ($List as $Sections) {
-                            echo "<li><a href = '#'>" . $Sections['NomSection'] . "</a></li> ";
+                            echo "<li><a href = 'Controllers/ShowImage.php'>" . $Sections['NomSection'] . "</a></li> ";
                         }
                         ?>
                         <li class="divider"></li>

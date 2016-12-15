@@ -15,17 +15,17 @@ require_once ('dbconnection.php');
  * récupère les enregistrements de la table Contenu
  * @return array tableau contenant les enregistrements 
  */
-function getData($Section, $Categorie) {
+function getData(/*$Section,*/ $Categorie) {
     $db = connectDb();
     $sql = "SELECT Titre, lienContenu "
             . "FROM contenu as c "
             . "JOIN section as s ON c.idSection = s.idSection "
             . "JOIN categories as ca ON c.idCategorie = ca.idCategorie "
-            . "WHERE ca.nomCategorie = ':NomCategorie'"
-            . "AND s.NomSection = ':NomSection'";
+            . "WHERE ca.nomCategorie = ':NomCategorie'";
+           // . "AND s.NomSection = ':NomSection'";
     $request = $db->prepare($sql);
     $request->execute(array(
-        'NomSection' => $Section,
+       // 'NomSection' => $Section,
         'NomCategorie' => $Categorie,
     ));
     return $request->fetchAll();
