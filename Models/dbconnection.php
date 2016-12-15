@@ -4,14 +4,15 @@
 // Description: Connection à la base de données
 // Auteur: Micael Rodrigues
 // Classe : I.IN-P4B
-// Version 1: 24.11.2016
+// Version 1.0: 24.11.2016
+// Version 2.0: 15.12.2016
 
 function connectDb()
 {
-    $server = '127.0.0.1';
-    $pseudo = 'root';
-    $pwd = '';
-    $dbname = 'projetm152';
+    $server = '10.134.180.111';
+    $pseudo = 'ge-blague';
+    $pwd = 'Super';
+    $dbname = 'db-GeBlague';
     
     static $db = null;
     

@@ -15,7 +15,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include_once 'Views/navbar.php';
+        include_once 'Controllers/listSection.php';
         ?>
 
         <section class="strandardCenter">

@@ -7,6 +7,7 @@
 // Classe : I.IN-P4B
 // Version 1: 24.11.2016
 // Version 1.1: 8.12.2016
+// Version 1.2: 15.12.2016
 
 require_once ('dbconnection.php');
 
@@ -127,4 +128,16 @@ function InsertData($Titre,$LienContenu,$Auteur,$Categorie,$Section) {
         'Section' => $Section
     ));
     return $request->fetchAll();
+}
+/**
+ * Recupère toutes les Sections disponnibles
+ * @return type
+ */
+function GetSection(){
+    $db = connectDb();
+    $sql = "SELECT * FROM `section` ";
+    $request = $db->prepare($sql);
+    $request->execute();
+    $result = $request->fetchAll();
+    return $result;
 }
