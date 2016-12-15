@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">GE-BLAGUE</a>
+            <a class="navbar-brand" href="index.php">GE-BLAGUE</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,7 +53,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Ajouter</a></li>
+                <li><a href="addContent.php">Ajouter</a></li>
                 <li><a href="#">A Propos</a></li>
             </ul>
         </div>

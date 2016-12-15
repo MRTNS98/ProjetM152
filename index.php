@@ -25,9 +25,6 @@ and open the template in the editor.
             <!-- Inseré postVidéo -->
 
             <!-- Inseré postBlague -->
-            <?php
-            include_once "Views/formAddContent.php";
-            ?>
 
         </section>
 

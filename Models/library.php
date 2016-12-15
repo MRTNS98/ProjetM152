@@ -141,3 +141,16 @@ function GetSection(){
     $result = $request->fetchAll();
     return $result;
 }
+
+/**
+ * Recupère toutes les Categories disponnibles
+ * @return type
+ */
+function GetCategories(){
+    $db = connectDb();
+    $sql = "SELECT * FROM `categories` ";
+    $request = $db->prepare($sql);
+    $request->execute();
+    $result = $request->fetchAll();
+    return $result;
+}

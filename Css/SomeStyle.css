@@ -127,4 +127,12 @@ html{
     margin-bottom: 20px;
 }
 
+.addForm label {
+    width: 100px;
+}
+
+.addForm h3 {
+    text-align: center;
+}
+
 
