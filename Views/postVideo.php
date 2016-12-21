@@ -9,7 +9,7 @@
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/8IoUUAcN-Ng" frameborder="0" allowfullscreen></iframe>
         </div>
         <p class="postDesc">
-            Une description ? gjfkldsglkjdhgjk dsjfghksdlgjhk slfkjdl gjhskldh jkfdslgh jkldhfkjg sldhjkgf hsjkdfgh jkéldhfgj kshdjgfk sélhjfkgélh jdkélgfhjskdlhgljfk sd
+            Une description ?
         </p>
     </section>
     <footer class="postFooter">
