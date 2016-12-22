@@ -90,7 +90,7 @@ else
             
             if ($_POST["Categorie"] == "Blague")
             {
-                echo $_POST["Blague"];
+                InsertDataBlague($_POST["Title"],$_POST["Autor"],$cat["idCategorie"],$selectedSection["idSection"],$_POST["Blague"]);
             }
         }
     }

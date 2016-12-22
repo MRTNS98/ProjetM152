@@ -170,20 +170,12 @@ function InsertDataPicture($Titre,$LienContenu,$NomImage,$Auteur,$Categorie,$Sec
 /**
  * Insertion des Blagues dans la BDD
  */
-function InsertDataBlague($Titre,$LienContenu,$Auteur,$Categorie,$Section,$Description) {
+function InsertDataBlague($Titre,$Auteur,$Categorie,$Section,$Description) {
     $db = connectDb();
-    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `Auteur`,`idCategorie`, `idSection`, `Description`)
-            VALUES (':Titre',':LienContenu',':Auteur',':Categorie',':Section',':Description')";
+    $sql = "INSERT INTO `contenu`(`Titre`, `Auteur`,`idCategorie`, `idSection`, `Description`, `nbLike`, `nbDislike`)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
     $request = $db->prepare($sql);
-    $request->execute(array(
-        'Titre' => $Titre,
-        'LienContenu' => $LienContenu,
-        'Auteur' => $Auteur,
-        'Categorie' => $Categorie,
-        'Section' => $Section,
-        'Description' => $Description
-    ));
-    return $request->fetchAll();
+    $request->execute(array($Titre,$Auteur,$Categorie,$Section,$Description,0,0));
 }
 
 /**
