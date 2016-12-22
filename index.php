@@ -1,5 +1,10 @@
 <?php
 $action = trim(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING));
+if ($action == "")
+{
+    $action = "Accueil";
+}
+
 try {
     switch ($action) {
         case 'ShowImage':
@@ -12,7 +17,7 @@ try {
             include_once 'Controllers/ShowVideo.php';
             break;
         case 'Accueil':
-            include_once 'Controllerts/ShowAccueil.php';
+            include_once 'Controllers/ShowAccueil.php';
             break;
         default:
             require_once ('Views/404.php');

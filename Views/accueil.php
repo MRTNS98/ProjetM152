@@ -20,26 +20,13 @@ and open the template in the editor.
 
         <section class="strandardCenter">
 
-            <!-- Inseré postImage.php -->
-            <?php
-            include "Controllers/ShowImage.php";
-            ?>
-
-            <!-- Inseré postVidéo -->
-            <?php
-            include "Controllers/ShowImage.php";
-            ?>
-
-            <!-- Inseré postBlague -->
-            <?php
-            include "Controllers/ShowImage.php";
-            ?>
+            
 
 
         </section>
 
-    <?php
-    include_once 'Views/footer.php';
-    ?>
+        <?php
+        include_once 'Views/footer.php';
+        ?>
     </body>
 </html>
