@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -37,7 +32,7 @@ and open the template in the editor.
                         <div class="postPicture">
                             <?php
                             echo '<figure>';
-                            echo '<img src = "Uploads/Images/' . $Picture['lienContenu'] . '.jpg" alt = "' . $Picture['Auteur'] . '">';
+                            echo '<img src = "Uploads/Images/'.$Picture['lienContenu'].'" alt = "' . $Picture['NomImage'] . '">';
                             echo '</figure>';
                             ?>
                         </div>

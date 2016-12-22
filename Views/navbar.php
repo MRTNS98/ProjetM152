@@ -19,41 +19,41 @@
             <ul class="nav navbar-nav">
                 <!-- class="active" -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Images<span class="caret"></span></a>
+                    <a href="index.php?action=ShowImage" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Images<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <?php
                         foreach ($List as $Sections) {
-                            echo "<li><a href = 'Controllers/ShowImage.php'>" . $Sections['NomSection'] . "</a></li> ";
+                            echo "<li><a href = 'index.php?action=ShowImage&Section=".$Sections['NomSection']."'>" . $Sections['NomSection'] . "</a></li> ";
                         }
                         ?>
                         <li class="divider"></li>
-                        <li><a href="#">Voir Tout</a></li>
+                        <li><a href="index.php?action=ShowImage">Voir Tout</a></li>
                         <!--            <li class="divider"></li>
                                     <li><a href="#">A voir</a></li>-->
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vidéos<span class="caret"></span></a>
+                    <a href="index.php?action=ShowVideo" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vidéos<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <?php
                         foreach ($List as $Sections) {
-                            echo "<li><a href = '#'>" . $Sections['NomSection'] . "</a></li> ";
+                            echo "<li><a href = 'index.php?action=ShowVideo&Section=".$Sections['NomSection']."'>" . $Sections['NomSection'] . "</a></li> ";
                         }
                         ?>
                         <li class="divider"></li>
-                        <li><a href="#">Voir Tout</a></li>
+                        <li><a href="index.php?action=ShowVideo">Voir Tout</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blagues<span class="caret"></span></a>
+                    <a href="index.php?action=ShowBlague" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blagues<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <?php
                         foreach ($List as $Sections) {
-                            echo "<li><a href = '#'>" . $Sections['NomSection'] . "</a></li> ";
+                            echo "<li><a href = 'index.php?action=ShowBlague&Section=".$Sections['NomSection']."'>" . $Sections['NomSection'] . "</a></li> ";
                         }
                         ?>
                         <li class="divider"></li>
-                        <li><a href="#">Voir Tout</a></li>
+                        <li><a href="index.php?action=ShowBlague">Voir Tout</a></li>
                     </ul>
                 </li>
             </ul>
