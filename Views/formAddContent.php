@@ -21,12 +21,19 @@ and open the template in the editor.
         <section class="strandardCenter">
             <div class="addForm">
                 <h3>Partagez vos blagues avec le monde entier !</h3>
-                <form method="POST" action="addContent.php" class="form-horizontal" enctype="multipart/form-data">
+                <form method="POST" action="index.php?action=AddContent" class="form-horizontal" enctype="multipart/form-data">
                     <fieldset>
                         <div class="form-group">
                             <label for="inputAutor" class="col-lg-2 control-label">Auteur :</label>
                             <div class="col-lg-10">
                                 <input type="text" name="Autor" class="form-control" id="inputAutor" placeholder="Nom de l'auteur">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inputTitle" class="col-lg-2 control-label">Titre :</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="Title" class="form-control" id="inputAutor" placeholder="Un Titre">
                             </div>
                         </div>
 
@@ -58,7 +65,7 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label class="col-lg-2 control-label" id="lblImage">Image :</label>
-                            <label class="col-lg-2 control-label" id="lblCodeVideo" style="display:none">Code vidéo :</label>
+                            <label class="col-lg-2 control-label" id="lblCodeVideo" style="display:none" >Lien vidéo :</label>
                             <label class="col-lg-2 control-label" id="lblBlague" style="display:none">Blague :</label>
                             <div class="col-lg-10">
                                 <input type="file" name="Image" id="picUpload">

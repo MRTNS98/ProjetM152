@@ -43,8 +43,10 @@ function getDataCategorie($Categorie) {
             . "FROM contenu as c "
             . "JOIN categories as ca ON c.idCategorie = ca.idCategorie "
             . "WHERE ca.nomCategorie = ':NomCategorie'";
+           // . "AND s.NomSection = ':NomSection'";
     $request = $db->prepare($sql);
     $request->execute(array(
+       // 'NomSection' => $Section,
         'NomCategorie' => $Categorie,
     ));
     return $request->fetchAll();
@@ -155,23 +157,46 @@ function UpdateDislike($NbDislike, $IdContenu) {
 }
 
 /**
- * Pas Sur que fonction soit correctement faite, doute si besoin de jointure pour lien entre categorie et section avec le contenu
- * Insertion du contenus dans la BDD
+ * Insertion des images dans la BDD
  */
-function InsertData($Titre,$LienContenu,$Auteur,$Categorie,$Section) {
+function InsertDataPicture($Titre,$LienContenu,$NomImage,$Auteur,$Categorie,$Section,$Description) {
     $db = connectDb();
-    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `Auteur`,`idCategorie`, `idSection`)
-            VALUES (':Titre',':LienContenu',':Auteur',:Categorie,:Section)";
+    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `NomImage`, `Auteur`,`idCategorie`, `idSection`, `Description`, `nbLike`, `nbDislike`)
+            VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $request = $db->prepare($sql);
+    $request->execute(array($Titre,$LienContenu,$NomImage,$Auteur,$Categorie,$Section,$Description,0,0));
+}
+
+/**
+ * Insertion des Blagues dans la BDD
+ */
+function InsertDataBlague($Titre,$LienContenu,$Auteur,$Categorie,$Section,$Description) {
+    $db = connectDb();
+    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `Auteur`,`idCategorie`, `idSection`, `Description`)
+            VALUES (':Titre',':LienContenu',':Auteur',':Categorie',':Section',':Description')";
     $request = $db->prepare($sql);
     $request->execute(array(
         'Titre' => $Titre,
         'LienContenu' => $LienContenu,
         'Auteur' => $Auteur,
         'Categorie' => $Categorie,
-        'Section' => $Section
+        'Section' => $Section,
+        'Description' => $Description
     ));
     return $request->fetchAll();
 }
+
+/**
+ * Insertion des vidéos dans la BDD
+ */
+function InsertDataVideo($Titre,$LienContenu,$Auteur,$Categorie,$Section,$Description) {
+    $db = connectDb();
+    $sql = "INSERT INTO `contenu`(`Titre`, `lienContenu`, `Auteur`,`idCategorie`, `idSection`, `Description`, `nbLike`, `nbDislike`)
+            VALUE (?, ?, ?, ? ,? ,?, ?, ?)";
+    $request = $db->prepare($sql);
+    $request->execute(array($Titre,$LienContenu,$Auteur,$Categorie,$Section,$Description,0,0));
+}
+
 /**
  * Recupère toutes les Sections disponnibles
  * @return type
@@ -197,3 +222,4 @@ function GetCategories(){
     $result = $request->fetchAll();
     return $result;
 }
+

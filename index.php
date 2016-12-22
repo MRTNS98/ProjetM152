@@ -19,6 +19,9 @@ try {
         case 'Accueil':
             include_once 'Controllers/ShowAccueil.php';
             break;
+        case 'AddContent':
+            include_once 'Controllers/addContent.php';
+            break;
         default:
             require_once ('Views/404.php');
             break;
