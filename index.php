@@ -1,4 +1,10 @@
 <?php
+/**
+ * Auteur : Micaël Rodrigues & Miguel Martins
+ * Date : 15.12.2016
+ * Fichier : index.php
+ * Decription : Sert de routeur vers les pages demandées 
+ */
 $action = trim(filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING));
 if ($action == "")
 {
