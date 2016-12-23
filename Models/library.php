@@ -18,12 +18,12 @@ require_once ('dbconnection.php');
  */
 function getData($Section, $Categorie) {
     $db = connectDb();
-    $sql = "SELECT Titre, lienContenu "
+    $sql = "SELECT * "
             . "FROM contenu as c "
             . "JOIN section as s ON c.idSection = s.idSection "
             . "JOIN categories as ca ON c.idCategorie = ca.idCategorie "
-            . "WHERE ca.nomCategorie = ':NomCategorie'"
-            . "AND s.NomSection = ':NomSection'";
+            . "WHERE ca.nomCategorie = :NomCategorie "
+            . "AND s.NomSection = :NomSection";
     $request = $db->prepare($sql);
     $request->execute(array(
         'NomSection' => $Section,
@@ -42,13 +42,9 @@ function getDataCategorie($Categorie) {
     $sql = "SELECT * "
             . "FROM contenu as c "
             . "JOIN categories as ca ON c.idCategorie = ca.idCategorie "
-            . "WHERE ca.nomCategorie = ':NomCategorie'";
-           // . "AND s.NomSection = ':NomSection'";
+            . "WHERE ca.nomCategorie = ?";
     $request = $db->prepare($sql);
-    $request->execute(array(
-       // 'NomSection' => $Section,
-        'NomCategorie' => $Categorie,
-    ));
+    $request->execute(array($Categorie));
     return $request->fetchAll();
 }
 
@@ -62,7 +58,7 @@ function getDataSection($Section) {
     $sql = "SELECT * "
             . "FROM contenu as c "
             . "JOIN section as s ON c.idSection = s.idSection "
-            . "WHERE s.NomSection = ':NomSection'";
+            . "WHERE s.NomSection = :NomSection";
     $request = $db->prepare($sql);
     $request->execute(array(
         'NomSection' => $Section,
@@ -93,8 +89,8 @@ function NbLike($Categorie, $Contenu) {
     $sql = "SELECT `nbLike` 
             FROM `contenu` as c
             JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
-            WHERE ca.nomCategorie = ':NomCategorie'
-            AND c.Titre =':NomContenu'";
+            WHERE ca.nomCategorie = :NomCategorie
+            AND c.Titre = :NomContenu";
     $request = $db->prepare($sql);
     $request->execute(array(
         `NomCategorie` => $Categorie,
@@ -114,8 +110,8 @@ function NbDislike($Categorie, $Contenu) {
     $sql = "SELECT `nbDislike` 
             FROM `contenu` as c
             JOIN `categories` as ca ON c.idCategorie = ca.idCategorie
-            WHERE ca.nomCategorie = ':NomCategorie'
-            AND c.Titre =':NomContenu'";
+            WHERE ca.nomCategorie = :NomCategorie
+            AND c.Titre = :NomContenu";
     $request = $db->prepare($sql);
     $request->execute(array(
         `NomCategorie` => $Categorie,

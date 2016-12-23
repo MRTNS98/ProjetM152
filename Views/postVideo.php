@@ -37,7 +37,7 @@ and open the template in the editor.
                     </header>
                     <section>
                         <div class="postPicture">
-                            <iframe width="100%" height="315" src="<?php $Video['lienContenu'] ?>" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $Video['lienContenu']; ?>" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <p class="postDesc">
                             <?php

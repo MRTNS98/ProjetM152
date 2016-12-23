@@ -70,7 +70,7 @@ else
                 {
                     $codeVideo = "";
                     $count = 0;
-                    while ($count < 12)
+                    while ($count < 11)
                     {
                         $codeVideo = $codeVideo . $link[strlen($link) - 1 - $count];
                         $count = $count + 1;
@@ -92,8 +92,9 @@ else
             {
                 InsertDataBlague($_POST["Title"],$_POST["Autor"],$cat["idCategorie"],$selectedSection["idSection"],$_POST["Blague"]);
             }
+            
+            header("location: index.php?action=Show".$cat["nomCategorie"]."&Section=".$selectedSection["NomSection"]);
+            exit;
         }
     }
-    
-    echo $_POST["Description"];
 }
