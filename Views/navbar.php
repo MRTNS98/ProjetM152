@@ -59,7 +59,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php?action=AddContent">Ajouter</a></li>
-                <li><a href="#">A Propos</a></li>
+                <li><a href="index.php?action=About">A Propos</a></li>
             </ul>
         </div>
     </div>

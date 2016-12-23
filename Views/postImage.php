@@ -43,21 +43,11 @@
                         </p>
                     </section>
                     <footer class="postFooter">
-                        <button class="btn btn-success" name="Like">Like</button>
+                        <button class="btn btn-success" name="Like" id="<?= $Picture['idContenu'] ?>">Like</button>
+                        <button class="btn btn-danger" name="Dislike" id="<?= $Picture['idContenu'] ?>">Dislike</button>
                         <?php
-                        // Pas Sur de cette ligne de code pour ajouter des likes //
-                        if (!isset($_GET['Like'])) {
-                            $Like = 0;
-                        } else {
-                            $Like = $_GET['Like'] + 1;
-                            UpdateLike($Like, $Picture['idContenu']);
-                        }
-                        ///////////////////////////////////////////////////////////
-                        ?>
-                        <button class="btn btn-danger" name="Dislike">Dislike</button>
-                        <?php
-                        echo '<p class = "text-danger">' . $Picture['nbLike'] . '</p>';
-                        echo '<p class = "text-success">' . $Picture['nbDislike'] . '</p>';
+                        echo '<p class = "text-danger">' . $Picture['nbDislike'] . '</p>';
+                        echo '<p class = "text-success">' . $Picture['nbLike'] . '</p>';
                         ?>
                     </footer>
                 </article>
@@ -70,5 +60,35 @@
         <?php
         include_once 'Views/footer.php';
         ?>
+        <script>
+
+            $(".btn-success").click(function (e) {
+                console.log(e.target.id);
+                var i = e.target.id;
+                $.ajax(
+                        {
+                            type: "GET",
+                            url: "index.php?action=Like",
+                            data: 'idPost='+ i
+                        }
+                ).done(function () {
+                    alert("Le post a bien été like");
+                });
+            });
+
+            $(".btn-danger").click(function (e) {
+                console.log(e.target.id);
+                var i = e.target.id;
+                $.ajax(
+                        {
+                            type: "GET",
+                            url: "index.php?action=Dislike",
+                            data: 'idPost='+ i
+                        }
+                ).done(function () {
+                    alert("Le post a bien été dislike");
+                });
+            });
+        </script>
     </body>
 </html>

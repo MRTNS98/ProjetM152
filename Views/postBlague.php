@@ -44,7 +44,7 @@ and open the template in the editor.
                     </section>
                     <footer class="postFooter">
                         <button class="btn btn-success" id="<?= $Blague['idContenu'] ?>">Like</button>
-                        <button class="btn btn-danger">Dislike</button>
+                        <button class="btn btn-danger" id="<?= $Blague['idContenu'] ?>">Dislike</button>
                         <p class="text-danger"><?php echo $Blague["nbDislike"]; ?></p>
                         <p class="text-success"><?php echo $Blague["nbLike"]; ?></p>
                     </footer>
@@ -86,16 +86,6 @@ and open the template in the editor.
                     alert("Le post a bien été dislike");
                 });
             });
-            /*$.ajax(
-             {
-             type: "POST",
-             url: "Controllers/like.php",
-             data: {
-             idPost: "1"
-             }
-             }
-             ).always(function{alert("Like");});
-             };*/
         </script>
     </body>
 </html>

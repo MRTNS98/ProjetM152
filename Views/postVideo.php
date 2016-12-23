@@ -46,11 +46,11 @@ and open the template in the editor.
                         </p>
                     </section>
                     <footer class="postFooter">
-                        <button class="btn btn-success">Like</button>
-                        <button class="btn btn-danger">Dislike</button>
+                        <button class="btn btn-success" id="<?= $Video['idContenu'] ?>">Like</button>
+                        <button class="btn btn-danger" id="<?= $Video['idContenu'] ?>">Dislike</button>
                         <?php
-                        echo '<p class = "text-danger">' . $Video['nbLike'] . '</p>';
-                        echo '<p class = "text-success">' . $Video['nbDislike'] . '</p>';
+                        echo '<p class = "text-danger">' . $Video['nbDislike'] . '</p>';
+                        echo '<p class = "text-success">' . $Video['nbLike'] . '</p>';
                         ?>
                     </footer>
                 </article>
@@ -62,5 +62,35 @@ and open the template in the editor.
         <?php
         include_once 'Views/footer.php';
         ?>
+        <script>
+
+            $(".btn-success").click(function (e) {
+                console.log(e.target.id);
+                var i = e.target.id;
+                $.ajax(
+                        {
+                            type: "GET",
+                            url: "index.php?action=Like",
+                            data: 'idPost='+ i
+                        }
+                ).done(function () {
+                    alert("Le post a bien été like");
+                });
+            });
+
+            $(".btn-danger").click(function (e) {
+                console.log(e.target.id);
+                var i = e.target.id;
+                $.ajax(
+                        {
+                            type: "GET",
+                            url: "index.php?action=Dislike",
+                            data: 'idPost='+ i
+                        }
+                ).done(function () {
+                    alert("Le post a bien été dislike");
+                });
+            });
+        </script>
     </body>
 </html>

@@ -34,6 +34,9 @@ try {
         case 'Dislike':
             include_once 'Controllers/dislike.php';
             break;
+        case 'About':
+            include_once 'Controllers/about.php';
+            break;
         default:
             require_once ('Views/404.php');
             break;
