@@ -121,6 +121,36 @@ function NbDislike($Categorie, $Contenu) {
 }
 
 /**
+ * Affiche le nombre de dislike d'un contenu déterminé
+ * @param type $idContenu
+ * @return type
+ */
+function NbLikeById($idContenu) {
+    $db = connectDb();
+    $sql = "SELECT `nbLike` 
+            FROM `contenu`
+            WHERE idContenu = ?";
+    $request = $db->prepare($sql);
+    $request->execute(array($idContenu));
+    return $request->fetchAll();
+}
+
+/**
+ * Affiche le nombre de dislike d'un contenu déterminé
+ * @param type $idContenu
+ * @return type
+ */
+function NbDislikeById($idContenu) {
+    $db = connectDb();
+    $sql = "SELECT `nbDislike` 
+            FROM `contenu`
+            WHERE idContenu = ?";
+    $request = $db->prepare($sql);
+    $request->execute(array($idContenu));
+    return $request->fetchAll();
+}
+
+/**
  * Actualise les Likes à la BDD
  */
 function UpdateLike($NbLike, $IdContenu) {

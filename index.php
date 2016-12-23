@@ -22,6 +22,12 @@ try {
         case 'AddContent':
             include_once 'Controllers/addContent.php';
             break;
+        case 'Like':
+            include_once 'Controllers/like.php';
+            break;
+        case 'Dislike':
+            include_once 'Controllers/dislike.php';
+            break;
         default:
             require_once ('Views/404.php');
             break;

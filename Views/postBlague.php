@@ -45,8 +45,8 @@ and open the template in the editor.
                     <footer class="postFooter">
                         <button class="btn btn-success" id="<?= $Blague['idContenu'] ?>">Like</button>
                         <button class="btn btn-danger">Dislike</button>
-                        <p class="text-danger"><?php echo $Blague["nbLike"]; ?></p>
-                        <p class="text-success"><?php echo $Blague["nbDislike"]; ?></p>
+                        <p class="text-danger"><?php echo $Blague["nbDislike"]; ?></p>
+                        <p class="text-success"><?php echo $Blague["nbLike"]; ?></p>
                     </footer>
                 </article>
                 <?php
@@ -62,32 +62,28 @@ and open the template in the editor.
             $(".btn-success").click(function (e) {
                 console.log(e.target.id);
                 var i = e.target.id;
-                alert("Like");
                 $.ajax(
                         {
-                            type: "POST",
-                            url: "Controllers/like.php",
-                            data: {
-                                idPost: i;
-                            }
+                            type: "GET",
+                            url: "index.php?action=Like",
+                            data: 'idPost='+ i
                         }
                 ).done(function () {
-                    alert("ajax Like");
+                    alert("Le post a bien été like");
                 });
             });
 
-            $(".btn-danger").click(function () {
-                alert("disLike");
+            $(".btn-danger").click(function (e) {
+                console.log(e.target.id);
+                var i = e.target.id;
                 $.ajax(
                         {
-                            type: "POST",
-                            url: "Controllers/dislike.php",
-                            data: {
-                                idPost: "1"
-                            }
+                            type: "GET",
+                            url: "index.php?action=Dislike",
+                            data: 'idPost='+ i
                         }
                 ).done(function () {
-                    alert("ajax disLike");
+                    alert("Le post a bien été dislike");
                 });
             });
             /*$.ajax(
